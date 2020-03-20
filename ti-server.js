@@ -13,7 +13,7 @@ var app = express();
 app.get('/', function (req, res) {
     console.log('/ path requested');
     
-    fs.readFile('html/ti/index.html', (err, data) => {
+    fs.readFile('docs/ti/index.html', (err, data) => {
         if (err) throw err;
 
         res.send(data.toString());
@@ -31,7 +31,7 @@ app.get(/\/(.+)/, function(req, res) {
     console.log(req.url + ' path requested');
     let path = req.url.replace(/\/(.+)/, '$1');
     
-    fs.readFile('html/ti/'+path, (err, data) => {
+    fs.readFile('docs/ti/'+path, (err, data) => {
         if (err) throw err;
 
         res.send(data.toString());

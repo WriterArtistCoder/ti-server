@@ -13,7 +13,7 @@ fs.readFile('auth.json', (err, data) => {
 
 // Get response page for '/' request
 let index;
-fs.readFile('html/api/index.html', (err, data) => {
+fs.readFile('docs/api/index.html', (err, data) => {
     if (err) throw err;
 
     index = data.toString();
