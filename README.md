@@ -10,6 +10,7 @@ This is the code that runs on the Tiny Stripz server. It is for the [Tiny Stripz
 - **`api-server.js`** The Tiny Stripz API server script.
 - **`ti-server.js`** The Tiny Stripz website server script.
 - **`comic_protoype.js`** The Tiny Stripz API script.
+- **`auth.json`** Authorization file, contains API requests and keys.
 - **`package.json`** The NPM `package.json` file.
 - **`package-lock.json`** The NPM `package-lock.json` file.
 - **`README.md`** The README!
