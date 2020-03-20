@@ -142,15 +142,15 @@ header {
 
 #comic-caption {
 	height: 100%;
-	overflow-y: auto;
+	overflow-y: scroll;
 	transition: all 200ms;
 }
 
 footer {
-	font-size: 14px;
+	font-size: 12px;
 	text-align: center;
 	margin: 150px auto 50px auto;
-	width: 60%;
+	width: 80%;
 }
 
 /* Desktop view */
@@ -178,7 +178,12 @@ footer {
 		height: 400px;
 	}
 
+	#comic-caption {
+		overflow-y: auto;
+	}
+
 	footer {
+		font-size: 14px;
 		margin: 150px auto 50px 5%;
 		width: 45%;
 	}
