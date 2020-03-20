@@ -1,0 +1,8 @@
+# TODO
+- Fix links
+- Add about.html and contact.html
+- Add social buttons
+- Finish ti-server.js
+- Fix JSDOM in comic_prototype.js
+- Host on AWS
+- Add api.tinystripz.com domain name

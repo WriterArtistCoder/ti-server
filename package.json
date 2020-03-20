@@ -1,0 +1,35 @@
+{
+  "name": "ti-server",
+  "version": "0.0.1",
+  "description": "The code for the Tiny Stripz and Tiny Stripz API server.",
+  "main": "ti-server.js",
+  "scripts": {
+    "ti": "nodemon ti-server.js",
+    "api": "nodemon api-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WriterArtistCoder/ti-server.git"
+  },
+  "keywords": [
+    "tinystripz",
+    "webcomic",
+    "website",
+    "api",
+    "server",
+    "blogger"
+  ],
+  "author": "WriterArtistCoder",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsdom": "^16.2.1"
+  },
+  "bugs": {
+    "url": "https://github.com/WriterArtistCoder/ti-server/issues"
+  },
+  "homepage": "https://github.com/WriterArtistCoder/ti-server#readme"
+}
