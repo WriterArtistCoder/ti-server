@@ -4,8 +4,9 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 ## Structure
 - **`docs`** The client side for the Tiny Stripz website and API docs.
     - **`api`** The content of the API docs.
-    - **`ti`** The content of the Tiny Stripz website.
-         - **`resources`** Resources for the website.
+         - **`resources`** Resources for the website, e.g. images.
+         - **`css`** Stylesheets (`.css`) for the website
+         - **`scripts`** Scripts (`.js`) for the website
 - **`node_modules`** All the imported modules for the server.
 - **`api-server.js`** The Tiny Stripz API server script.
 - **`ti-server.js`** The Tiny Stripz website server script.

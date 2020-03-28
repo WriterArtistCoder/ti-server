@@ -5,7 +5,7 @@
 - Add AddThis
 - Add archive of old logos
 - Fix links
-- Add about.html
+- Add pages/about.html
 - Finish ti-server.js
 - Fix JSDOM in comic_prototype.js
 - Host on AWS
