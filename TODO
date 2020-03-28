@@ -1,10 +1,11 @@
 # TODO
-- Fix links
 - Add other comics
+- Cloak auth.json from GET requests
+- Contact: Finish EMAIL and DISCORD
 - Add AddThis
 - Add archive of old logos
-- Add about.html and contact.html
-- Add social buttons
+- Fix links
+- Add about.html
 - Finish ti-server.js
 - Fix JSDOM in comic_prototype.js
 - Host on AWS

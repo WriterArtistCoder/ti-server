@@ -2,7 +2,7 @@
 This is the code that runs on the Tiny Stripz server. It is for the [new Tiny Stripz website](https://writerartistcoder.github.io/ti-server/ti/index.html) and [Tiny Stripz API](https://api.tinystripz.com) (which is not currently available).
 
 ## Structure
-- **`html`** The actual web content of the Tiny Stripz website and API docs.
+- **`docs`** The client side for the Tiny Stripz website and API docs.
     - **`api`** The content of the API docs.
     - **`ti`** The content of the Tiny Stripz website.
          - **`resources`** Resources for the website.
