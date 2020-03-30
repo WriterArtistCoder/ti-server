@@ -2,11 +2,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 70%;
+    width: 500px;
+    max-width: 100%;
     margin: auto;
 }
 
-.social-container div {
+.social-container a div {
     width: 100px;
     border-radius: 10px;
     margin: 5px;

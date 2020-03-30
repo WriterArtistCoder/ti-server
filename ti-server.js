@@ -14,6 +14,13 @@ app.use(express.static('docs/ti'));
 
 // GET comic page
 app.get(/\/comic\/(\d+)/, function(req, res) {
+    var contents = fs.readFileSync('docs/ti/index.html', 'utf8');
+    res.send(contents);
+    // res.send(req.url.replace(/\/comic\/(\d+)/, '$1'));
+});
+
+// GET comic page
+app.get(/\/comic\/(\d+)/, function(req, res) {
     res.send(req.url.replace(/\/comic\/(\d+)/, '$1'));
 });
 

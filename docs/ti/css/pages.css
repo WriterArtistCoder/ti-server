@@ -1,0 +1,45 @@
+/* Adds Tiny Stripz icon before h1 element */
+#mainHeader h1::before {
+	font-size: 36px;
+	color: transparent;
+	content: 'aaa';
+	background: url('../resources/logo-text.svg') no-repeat 32px 32px;
+	background-position: center;
+	height: auto;
+}
+
+.section-content {
+	width: 80%;
+	margin: auto;
+}
+
+#scrollHeader {
+	opacity: 0;
+    background: linear-gradient(90deg, #ff1500, #ff9000, #ffdd00, #26cc10, #18c1f5, #0f74f7, #180ff7, #7d08e2, #b312f7, #e312f7);
+    border-radius: 0 0 50px;
+	
+	top: -50px;
+	left: 0;
+    margin: 0;
+    width: 95%;
+    height: auto;
+
+	position: fixed;
+	z-index: 100;
+	transition: all 200ms;
+}
+
+#scrollHeader.scrollHeaderShow {
+	display: block;
+	opacity: 1;
+	top: 0px;
+}
+
+#scrollHeader h1 {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    top: 0;
+    margin: 10px;
+    left: 30px;
+}
