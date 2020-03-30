@@ -1,8 +1,8 @@
 # TODO
 - Add other comics
+- Add accessibility
 - Add AddThis
-- Add archive of old logos
-- Finish About
+- Add archive of old logos and style guide
 - Optimize website
 - Finish ti-server.js
 - Fix JSDOM in comic_prototype.js
