@@ -1,31 +1,39 @@
 // Imports
-const fs = require('fs');
-
-// Express
-
-const express = require('express');
-
-var app = express();
+const fs = require('fs')
+const express = require('express')
+const mime = require('mime')
 
 // Respond to requests
+var app = express()
 
-// GET Tiny Stripz website
-app.use(express.static('docs/ti'));
+// GET image from website
+app.get(/\/images\/.+/gm, function (req, res) {
+    const fileExt = req.url.replace(/^[^.]+\.(.+)$/gm, '$1')
+    const header = mime.getType(fileExt)
 
-// GET comic page
-app.get(/\/comic\/(\d+)/, function(req, res) {
-    var contents = fs.readFileSync('docs/ti/index.html', 'utf8');
-    res.send(contents);
-    // res.send(req.url.replace(/\/comic\/(\d+)/, '$1'));
-});
+    res.setHeader('Content-Type', `${header}; charset=UTF-8`)
+    res.sendFile(`C://Users/sodal/git/ti-server/docs/ti${req.url}`)
 
-// GET comic page
-app.get(/\/comic\/(\d+)/, function(req, res) {
-    res.send(req.url.replace(/\/comic\/(\d+)/, '$1'));
-});
+    console.log(`${req.url} path requested | Path: images | Content-Type: ${header} | TIME: ${new Date().getTime()}`)
+})
+
+// GET a file from website
+app.get(/\/.+/gm, function (req, res) {
+    if (!req.url.startsWith('/images')) {
+        var contents = fs.readFileSync(`docs/ti${req.url}`, 'utf8')
+
+        const fileExt = req.url.replace(/^[^.]+\.(.+)$/gm, '$1')
+        const header = mime.getType(fileExt)
+
+        res.setHeader('Content-Type', `${header}; charset=UTF-8`)
+        res.send(contents)
+
+        console.log(`${req.url} path requested | Path: general | Content-Type: ${header} | TIME: ${new Date().getTime()}`)
+    }
+})
 
 // Start server on port
 
 var server = app.listen(2204, function () {
-    console.log('Server started on port: 2204');
-});
+    console.log('Server started on port: 2204')
+})

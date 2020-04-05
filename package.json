@@ -25,8 +25,10 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jsdom": "^16.2.1"
+    "jsdom": "^16.2.2",
+    "mime": "^2.4.4"
   },
   "bugs": {
     "url": "https://github.com/WriterArtistCoder/ti-server/issues"

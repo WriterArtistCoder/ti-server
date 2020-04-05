@@ -5,13 +5,15 @@
 }
 
 .section-comic {
-	margin-left: 0px;
+	margin: 50px 0;
 	padding: 10px;
 }
 
 .section-comic-image {
-	width: 95%;
-	margin: auto 5%;
+	width: 90%;
+	position: relative;
+	top: 0;
+	margin: auto;
 }
 
 .comic-nav {
@@ -38,7 +40,7 @@
 
 #comic-image {
 	width: 100%;
-	border-radius: 2%;
+	border-radius: 10px;
 }
 
 #comic-image:hover {
@@ -74,16 +76,16 @@
 
 @media only screen and (min-width: 1000px) {
 	.section-comic-image {
-		position: absolute;
 		width: 40%;
+		margin-left: 5%;
 		max-width: 550px;
-		margin: 0;
-		right: 5%;
 	}
 
 	.section-comic-content {
 		width: 45%;
-		height: 400px;
+		height: 300px;
+		margin-right: 50px;
+		float: right;
 	}
 
 	#comic-caption {

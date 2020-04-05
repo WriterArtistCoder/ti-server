@@ -3,7 +3,7 @@
 	font-size: 36px;
 	color: transparent;
 	content: 'aaa';
-	background: url('../resources/logo-text.svg') no-repeat 32px 32px;
+	background: url('../images/logo-text.svg') no-repeat 32px 32px;
 	background-position: center;
 	height: auto;
 }
