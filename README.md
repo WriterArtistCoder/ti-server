@@ -14,8 +14,6 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
         - `style.css` Stylesheet
     - **`ti`** The content of the Tiny Stripz website
         - **`css`** Stylesheets (`.css`) for the website
-            - `contact.css` Stylesheet for `contact.html`
-            - `index.css` Stylesheet for `index.html`
             - `normalize.css` Browser compatibility stylesheet
             - `pages.css` Stylesheet for pages other than `index.html`
             - `style.css` Stylesheet for all pages

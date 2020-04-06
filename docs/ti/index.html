@@ -11,67 +11,188 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
 
     <title>Home | Tiny Stripz</title>
+
+    <style>
+        .section-content {
+            width: 60%;
+            margin: auto;
+            padding: 10px;
+        }
+
+        .section-comic {
+            margin: 50px 0;
+            padding: 10px;
+        }
+
+        .section-comic-image {
+            width: 90%;
+            position: relative;
+            top: 0;
+            margin: auto;
+        }
+
+        .comic-nav {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .comic-nav a {
+            color: black;
+            margin: auto 10px;
+            transition: all 100ms;
+        }
+
+        .comic-nav a:hover {
+            color: #000000a0;
+            font-size: 20px;
+        }
+
+        .section-comic-content {
+            width: 80%;
+            height: 200px;
+            margin-left: 5%;
+        }
+
+        #comic-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        #comic-image:hover {
+            cursor: zoom-in;
+        }
+
+        #comic-title {
+            position: sticky;
+            border-radius: 5px;
+            font-weight: 700;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #comic-title:hover {
+            white-space: normal;
+            text-overflow: none;
+        }
+
+        #comic-date {
+            font-weight: 600;
+            color: #000000c0;
+        }
+
+        #comic-caption {
+            height: 100%;
+            overflow-y: scroll;
+            transition: all 200ms;
+        }
+
+        /* Desktop view */
+
+        @media only screen and (min-width: 1000px) {
+            .section-comic-image {
+                width: 40%;
+                margin-left: 5%;
+                max-width: 550px;
+            }
+
+            .section-comic-content {
+                width: 45%;
+                height: 300px;
+                margin-right: 50px;
+                float: right;
+            }
+
+            #comic-caption {
+                overflow-y: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <nav>
-        <i class="fas fa-angle-left" aria-label="expand"></i>
-        <a href="index.html">🏠 Home</a><br>
-        <a href="pages/about.html">❔ About</a><br>
-        <a href="pages/contact.html">📨 Contact</a><br>
-    </nav>
+    <div id="container">
+        <nav>
+            <i class="fas fa-angle-left" aria-label="expand"></i>
+            <a href="index.html">🏠 Home</a><br>
+            <a href="pages/about.html">❔ About</a><br>
+            <a href="pages/contact.html">📨 Contact</a><br>
+        </nav>
 
-    <header id="mainHeader">
-        <div><img src="images/logo-text-full.svg" alt="Tiny Stripz"></div>
-        <p>Slice of life meets absurdist fantasy: a webcomic.</p>
-    </header>
+        <header id="mainHeader">
+            <div><img src="images/logo-text-full.svg" alt="Tiny Stripz"></div>
+            <p>Slice of life meets absurdist fantasy: a webcomic.</p>
+        </header>
 
-    <section class="section-comic">
-        <div class="section-comic-content">
-            <div class="comic-header">
-                <!-- Content -->
-                <h2 id="comic-title">#1: Title</h2>
-                <h3 id="comic-date">YYYY-MM-DD</h3><br>
+        <section class="section-comic">
+            <div class="section-comic-content">
+                <div class="comic-header">
+                    <!-- Content -->
+                    <h2 id="comic-title">#1: Title</h2>
+                    <h3 id="comic-date">YYYY-MM-DD</h3><br>
+                </div>
+
+                <div class="comic-nav">
+                    <a><i class="fas fa-fast-backward" aria-label="First comic"></i></a>
+                    <a><i class="fas fa-backward" aria-label="Previous comic"></i></a>
+                    <a><i class="fas fa-dice-four" aria-label="Random comic"></i></a>
+                    <a><i class="fas fa-forward" aria-label="Next comic"></i></a>
+                    <a><i class="fas fa-fast-forward" aria-label="Latest comic"></i></a>
+                </div>
+
+                <div id="comic-caption">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aperiam expedita autem enim impedit
+                    quam corrupti, illum, vero debitis reprehenderit aliquid officiis? Nobis labore reiciendis error
+                    culpa, animi dolor sunt! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit hic natus
+                    dicta vitae aspernatur culpa, necessitatibus pariatur harum deserunt veritatis fugit. Deleniti id
+                    hic magnam labore eius eos a veniam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
+                    voluptas dignissimos hic incidunt dolore qui asperiores quod consequatur corrupti quasi, magni sint
+                    quas magnam voluptatem voluptate esse, ullam ea aut. Lorem ipsum dolor sit, amet consectetur
+                    adipisicing elit. Esse facilis asperiores ad distinctio eligendi modi, pariatur autem aliquid soluta
+                    natus doloremque quibusdam quidem quas. Velit perferendis ullam aut voluptatibus itaque! Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Eos esse est velit repudiandae enim ab iure. Reiciendis
+                    quos culpa ipsam accusamus sapiente omnis nihil quasi nemo, officiis autem inventore expedita! Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Et vero eos provident consequuntur veritatis.
+                    Error laboriosam fugit quas nobis neque optio, excepturi libero veritatis velit, a debitis enim
+                    itaque dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto, eius aperiam,
+                    earum nesciunt corrupti atque tempore fugiat repudiandae eligendi consequatur accusamus harum
+                    veritatis consectetur exercitationem distinctio ipsa, doloremque tenetur!
+                </div>
             </div>
 
-            <div class="comic-nav">
-                <a><i class="fas fa-fast-backward" aria-label="First comic"></i></a>
-                <a><i class="fas fa-backward" aria-label="Previous comic"></i></a>
-                <a><i class="fas fa-dice-four" aria-label="Random comic"></i></a>
-                <a><i class="fas fa-forward" aria-label="Next comic"></i></a>
-                <a><i class="fas fa-fast-forward" aria-label="Latest comic"></i></a>
+            <div class="section-comic-image">
+                <!-- Image -->
+                <a href="https://1.bp.blogspot.com/-KCEffEhO54Y/XmhQG0Xf0zI/AAAAAAAAS0M/Ty6uk03Val8sMwpIMjt0CGhAAjDKAUiFgCLcBGAsYHQ/s640/Vibing.jpg"
+                    target="_blank">
+                    <img id="comic-image" class="floatingCard floatingCardPointer" src="images/testComic.jpg"
+                        alt="Transcript">
+                </a>
             </div>
+        </section>
 
-            <div id="comic-caption">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aperiam expedita autem enim impedit quam corrupti, illum, vero debitis reprehenderit aliquid officiis? Nobis labore reiciendis error culpa, animi dolor sunt! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit hic natus dicta vitae aspernatur culpa, necessitatibus pariatur harum deserunt veritatis fugit. Deleniti id hic magnam labore eius eos a veniam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut voluptas dignissimos hic incidunt dolore qui asperiores quod consequatur corrupti quasi, magni sint quas magnam voluptatem voluptate esse, ullam ea aut. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse facilis asperiores ad distinctio eligendi modi, pariatur autem aliquid soluta natus doloremque quibusdam quidem quas. Velit perferendis ullam aut voluptatibus itaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos esse est velit repudiandae enim ab iure. Reiciendis quos culpa ipsam accusamus sapiente omnis nihil quasi nemo, officiis autem inventore expedita! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et vero eos provident consequuntur veritatis. Error laboriosam fugit quas nobis neque optio, excepturi libero veritatis velit, a debitis enim itaque dicta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut architecto, eius aperiam, earum nesciunt corrupti atque tempore fugiat repudiandae eligendi consequatur accusamus harum veritatis consectetur exercitationem distinctio ipsa, doloremque tenetur!
-            </div>
-        </div>
+        <footer>
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License"
+                    style="border-width:0" src="images/by-sa.svg" /></a><br />These comics by <a
+                xmlns:cc="http://creativecommons.org/ns#" href="https://tinystripz.com" property="cc:attributionName"
+                rel="cc:attributionURL">https://tinystripz.com</a> is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0
+                Unported License except where otherwise noted</a>.
 
-        <div class="section-comic-image">
-            <!-- Image -->
-            <a href="https://1.bp.blogspot.com/-KCEffEhO54Y/XmhQG0Xf0zI/AAAAAAAAS0M/Ty6uk03Val8sMwpIMjt0CGhAAjDKAUiFgCLcBGAsYHQ/s640/Vibing.jpg"
-                target="_blank">
-                <img id="comic-image" class="floatingCard floatingCardPointer" src="images/testComic.jpg" alt="Transcript">
-            </a>
-        </div>
-    </section>
+            <br><br><br>
 
-    <footer>
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License"
-                style="border-width:0" src="images/by-sa.svg" /></a><br />These comics by <a
-            xmlns:cc="http://creativecommons.org/ns#" href="https://tinystripz.com" property="cc:attributionName"
-            rel="cc:attributionURL">https://tinystripz.com</a> is licensed under a <a rel="license"
-            href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License except where otherwise noted</a>.
+            The source code of this website, the server and more is available on <a
+                href="https://github.com/WriterArtistCoder/ti-server">GitHub</a>.
 
-        <br><br><br>
-        
-        The source code of this website, the server and more is available on <a href="https://github.com/WriterArtistCoder/ti-server">GitHub</a>.
+            <br><br><br>
 
-        <br><br><br>
-
-        This website uses the font <b>Lato</b> by <b>Łukasz Dziedzic</b> and the font <b>Nunito</b> by <b>Vernon Adams</b>, both under the <a href="https://scripts.sil.org/OFL">Open Font License</a>.
-        This website uses the Font Awesome icon font by <a href="https://fontawesome.com">Font Awesome</a> under the <a href="https://scripts.sil.org/OFL">Open Font License</a>. This website also uses normalize.css v8.0.1 by <a href="https://github.com/necolas/normalize.css">https://github.com/necolas/css/normalize.css</a>, which is under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
-    </footer>
+            This website uses the font <b>Lato</b> by <b>Łukasz Dziedzic</b> and the font <b>Nunito</b> by <b>Vernon
+                Adams</b>, both under the <a href="https://scripts.sil.org/OFL">Open Font License</a>.
+            This website uses the Font Awesome icon font by <a href="https://fontawesome.com">Font Awesome</a> under the
+            <a href="https://scripts.sil.org/OFL">Open Font License</a>. This website also uses normalize.css v8.0.1 by
+            <a href="https://github.com/necolas/normalize.css">https://github.com/necolas/css/normalize.css</a>, which
+            is under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.
+        </footer>
+    </div>
 
     <!-- <script src="./scripts/index.js"></script> -->
     <script src="https://kit.fontawesome.com/1c15d88451.js" crossorigin="anonymous"></script>
