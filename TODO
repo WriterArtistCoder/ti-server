@@ -1,6 +1,7 @@
 # TODO
 - Add other comics
 - Add accessibility
+- Add print version of website
 - Finish mobile view: content or image first in HTML?
 - Finish ti-server.js (see https://www.w3schools.com/nodejs/nodejs_url.asp)
 - Add archive of old logos and style guide

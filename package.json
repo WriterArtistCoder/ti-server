@@ -4,7 +4,6 @@
   "description": "The code for the Tiny Stripz and Tiny Stripz API server.",
   "main": "ti-server.js",
   "scripts": {
-    "ti": "nodemon ti-server.js",
     "api": "nodemon api-server.js"
   },
   "repository": {
