@@ -1,8 +1,10 @@
 # TODO
 - Add other comics
-- Add accessibility
+- Finish mobile view and add CSS grid to other pages
 - Add print version of website
-- Finish mobile view: content or image first in HTML?
+- Add typography styling
+- Fix CORS header for api-server.js
+- Add accessibility
 - Finish ti-server.js (see https://www.w3schools.com/nodejs/nodejs_url.asp)
 - Add archive of old logos and style guide
 - Add comments to HTML, CSS, and JS

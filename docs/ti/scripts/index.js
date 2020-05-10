@@ -1,14 +1,49 @@
-window.onload = function() {
+const apiURL = 'https://localhost:2205/posts/latest'
+
+window.onload = function () {
     // GET comic from Tiny Stripz API
-    const xmlHttp = new XMLHttpRequest()
-    xmlHttp.open('GET', 'http://localhost:2205/posts/latest', false)
-    xmlHttp.send(null)
+    sendXHR('GET', apiURL).then(function (responseData) {
+        const comic = JSON.parse(xmlHttp.responseText) // Parse response as JSON
+        comic.date = new Date(comic.date) // Convert date to Date instance
 
-    const comic = JSON.parse(xmlHttp.responseText) // Parse response as JSON
+        // Log response to console
+        console.log('Received data from Tiny Stripz API:')
+        console.log(comic)
 
-    console.log('Received data from Tiny Stripz API:')
-    console.log(comic)
-    if (comic.url) setComic(comic) // If response was succesful
+        if (comic.url) setComic(comic) // If response was succesful, set comic
+    })
+}
+
+/**
+ * Sends an XMLHttpRequest, then makes a `Promise` to return data.
+ * 
+ * Examples:
+ * - `sendXHR('GET', 'https://example.com').then(function (responseData) { // ... })`
+ * - `sendXHR('POST', 'https://example.com', { 'payload': 'Hi Nadine Pesto!' }).then(function (responseData) { // ... })`
+ * @param {String} method Request method (e.g. GET, POST)
+ * @param {String} url URL of request
+ * @param {Object} data JSON object to send (optional)
+ */
+const sendXHR = function (method, url, data) {
+    const promise = new Promise(function (resolve, reject) {
+        // Open XMLHttpRequest, set response type to json
+        const xmlRequest = new XMLHttpRequest()
+        xmlRequest.open(method, url)
+        xmlRequest.responseType = 'json'
+
+        // If sending data, set Content-Type header to application/json
+        if (data) xmlRequest.setRequestHeader('Content-Type', 'application/json')
+
+        // When request loads, resolve promise
+        xmlRequest.onload = function () {
+            resolve(xmlRequest.response)
+        }
+
+        // If there's data, send it as a stringified JSON object
+        xmlRequest.send(JSON.stringify(data))
+    })
+
+    return promise
 }
 
 /**
@@ -25,11 +60,12 @@ function setComic(comic) {
     // Set elements
     title.textContent = '#' + comic.number + ': ' + comic.title
 
-    // Convert ISO string to Date instance
-    comic.date = new Date(comic.date)
+    // Convert Date instance to ISO YYYY-0M-0D
+    console.log(comic.date.toISOString())
     date.textContent = comic.date.getFullYear() + '-' + comic.date.getMonth() + '-' + comic.date.getDate()
-    
+
     caption.innerHTML = comic.caption
+
     image.src = comic.image
     image.alt = comic.transcript
 }

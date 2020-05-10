@@ -1,0 +1,50 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(50px, auto));
+    grid-template-rows: repeat(5, minmax(50px, auto));
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 20px;
+    width: 90%;
+    margin: auto;
+    grid-template-areas: 'h h h cn cn cn' 'h h h cn cn cn' 'cc cc cc ci ci ci' 'cc cc cc ci ci ci' 'f f f f f f';
+}
+
+header {
+    grid-area: h;
+}
+
+.comic-nav {
+    grid-area: cn;
+    margin: auto;
+}
+
+.comic-image {
+    grid-area: ci;
+}
+
+.comic-content {
+    grid-area: cc;
+}
+
+footer {
+    grid-area: f;
+}
+
+/* Mobile view */
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: auto;
+        grid-auto-rows: minmax(50px, auto);
+        grid-template-areas: 'h' 'cn' 'ci' 'cc' 'f';
+    }
+
+    .comic-image {
+        max-width: 400px;
+        margin: auto;
+    }
+
+    header img {
+        max-height: auto;
+    }
+}

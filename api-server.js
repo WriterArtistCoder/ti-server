@@ -6,7 +6,7 @@ const https = require('https')
 const processor = require('./api-process')
 
 // Set up auth.json
-let auth
+var auth
 fs.readFile('auth.json', (err, data) => {
     if (err) throw err
 
@@ -14,7 +14,7 @@ fs.readFile('auth.json', (err, data) => {
 })
 
 // Get response page for '/' request
-let index
+var index
 fs.readFile('docs/api/index.html', (err, data) => {
     if (err) throw err
 
@@ -38,16 +38,15 @@ const sendXMLRequest = function (method, url) {
     return promise
 }
 
-// Express
+// Add middleware
 var app = express()
+app.use(cors({
+    origin: function (origin, callback) { // Allow all CORS requests
+        return callback(null, true);
+    }
+}))
 
 // Respond to requests
-
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 2204)
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-    next()
-})
 
 // GET /
 app.get('/', cors(), function (req, res) {
@@ -112,6 +111,7 @@ app.get('/posts/latest', cors(), function (req, res) {
 
             if (resPost != null) { // If post isn't empty
                 // Process post
+                console.log(resPost.content)
                 post = processor.fromBlogger(resPost)
 
                 res.status(200).send(post)

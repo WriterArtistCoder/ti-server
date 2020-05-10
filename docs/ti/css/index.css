@@ -1,0 +1,48 @@
+.comic-nav a {
+    color: gray;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.comic-image img {
+    border-radius: 10px;
+    float: right;
+    width: 80%;
+}
+
+.comic-image img:hover {
+    cursor: zoom-in;
+}
+
+#comic-title {
+    position: sticky;
+    border-radius: 5px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#comic-title:hover {
+    white-space: normal;
+    text-overflow: none;
+}
+
+#comic-date {
+    font-weight: 600;
+    color: #000000c0;
+}
+
+#comic-caption {
+    height: 100%;
+    overflow-y: auto;
+    transition: all 200ms;
+}
+
+/* Mobile view */
+
+@media (max-width: 900px) {
+    #comic-caption {
+        overflow-y: scroll;
+    }
+}

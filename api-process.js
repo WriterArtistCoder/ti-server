@@ -9,35 +9,38 @@ const { JSDOM } = jsdom
 */
 function fromBlogger(post) {
     // Delete newlines, then create a JSDOM instance from the HTML content of the post
-    const dom = new JSDOM(post.content.replace(/[\R|\n|\v]/gm, ''))
+    const dom = new JSDOM(post.content.replace(/[\r\n]+/gm, ''))
 
     // Create an object to return
-    let comic = {
-        url: post.url,
-        date: new Date(post.published).toISOString(),
-        number: post.title.replace(/#(\d+): (.+)$/gm, '$1'),
-        title: post.title.replace(/#(\d+): (.+)$/gm, '$2'),
-        image: null,
+    var comic = {
+        url:        post.url,
+        date:       new Date(post.published).toISOString(),
+        number:     post.title.replace(/#(\d+): (.+)$/gm, '$1'),
+        title:      post.title.replace(/#(\d+): (.+)$/gm, '$2'),
+        image:      null,
         transcript: null,
-        caption: null
+        caption:    null
     }
 
     try {
-        dom.window.document.querySelector('img').src
-        comic.image = dom.window.document.querySelector('img').src
+        // Get first link in document and get link location
+        // which will be location of high-quality image
+        dom.window.document.querySelector('a').href
+        comic.image = new URL(dom.window.document.querySelector('a').href)
     } catch (err) { console.log(err) }
 
     try {
-        dom.window.document.querySelector('img').alt
-        comic.transcript = dom.window.document.querySelector('img').alt
+        // Get first link in document and get its child element's alt text
+        dom.window.document.querySelector('a').childNodes[0].alt
+        comic.transcript = dom.window.document.childNodes[0].alt
     } catch (err) { console.log(err) }
 
     try {
         dom.window.document.querySelectorAll('div')[1]
-        comic.caption = dom.window.document.querySelectorAll('div')[1].textContent
+        comic.caption = dom.window.document.querySelectorAll('div')[1].innerHTML
     } catch (err) { console.log(err) }
 
-    console.log("Success!")
+    console.log('Success!')
     return comic
 }
 
