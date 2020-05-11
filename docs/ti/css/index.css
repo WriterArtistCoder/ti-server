@@ -1,12 +1,13 @@
 .comic-nav a {
     color: gray;
     font-size: 20px;
-    margin-right: 10px;
+
+    /* Spaces buttons */
+    margin-right: 15px;
 }
 
 .comic-image img {
     border-radius: 10px;
-    float: right;
     width: 80%;
 }
 

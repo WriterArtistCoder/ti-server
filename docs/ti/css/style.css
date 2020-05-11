@@ -2,10 +2,14 @@
 
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@600;700&display=swap');
-
 body {
 	overflow-x: hidden;
 	font-family: 'Roboto', sans-serif;
+}
+
+::selection {
+	color: #fff;
+	background: #ff1500;
 }
 
 #grid-container {
@@ -22,16 +26,28 @@ a {
 	text-decoration: none;
 }
 
-::selection {
-	color: #fff;
-	background: #ff1500;
+/* Sections */
+
+header {
+	margin-left: 50px;
+	margin-bottom: 100px;
 }
 
-/* Navigation */
+header img {
+	max-height: 80px;
+}
+
+footer {
+	font-size: 14px;
+	text-align: center;
+	margin: 50px 25%;
+}
+
+/* Nav styles */
 
 nav {
-	right: 0;
 	top: 5%;
+	right: 0;
 	position: fixed;
 	width: 200px;
 	height: 80%;
@@ -83,14 +99,7 @@ nav:hover a:hover {
 	opacity: 100%;
 }
 
-/* Other sections */
-#mainHeader {
-	margin: auto;
-}
-
-#mainHeader img {
-    max-height: 80px;
-}
+/* Floating card styles */
 
 .floatingCard {
 	box-shadow: -3px 4px 3px #00000010, 0px 2px 5px #00000020, 3px 4px 3px #00000010;
@@ -107,17 +116,21 @@ nav:hover a:hover {
 	box-shadow: -3px 8px 7px #00000020, 0px 6px 9px #00000030, 3px 8px 7px #00000020;
 }
 
-footer {
-	font-size: 14px;
-	text-align: center;
-	padding: auto 25%;
-	margin: 10px auto;
-}
-
 /* Mobile view */
 
 @media (max-width: 900px) {
+	header {
+		margin-left: auto;
+		margin-bottom: 10px;
+	}
+	header img {
+		width: 100%;
+	}
+	nav:not(:hover) {
+		height: 30px;
+	}
 	footer {
+		margin: 50px auto auto auto;
 		padding: 0;
 	}
 }

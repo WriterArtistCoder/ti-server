@@ -15,16 +15,16 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
         - **`css`** Stylesheets (`.css`) for the website
             - `normalize.css` Browser compatibility stylesheet
             - `index.css` Stylesheet for `index.html`
-            - `index-grid.css` Grid styles for `index.html`
+            - `index-grid.css` Handles positioning elements in `index.html`
             - `pages.css` Stylesheet for pages other than `index.html`
+            - `pages-grid.css` Handles positioning elements for pages other than `index.html`
             - `style.css` Stylesheet for all pages
-        - **`pages`** Pages other than `index.html`
+        - **`pages`** Webpages (`.html`), except for `index.html`
             - `about.html` About the webcomic
             - `contact.html` Social media and email
         - **`images`** Image resources for the website
         - **`scripts`** Scripts (`.js`) for the website
             - `index.js` Script for `index.html`
-            - `pages.js` Script for pages other than `index.html`
         - `index.html` Homepage
     - `CNAME` CNAME domain name record
     - `index.html` Redirects user to `ti/index.html`
