@@ -1,11 +1,13 @@
-.grid {
+#grid-container {
     display: grid;
     grid-template-columns: repeat(6, minmax(50px, auto));
     grid-template-rows: repeat(5, minmax(50px, auto));
     grid-auto-rows: minmax(50px, auto);
     grid-gap: 20px;
-    width: 90%;
-    margin: auto;
+
+    width: 95%;
+    height: 100%;
+    padding: 10px;
     grid-template-areas: 'h h h cn cn cn' 'h h h cn cn cn' 'cc cc cc ci ci ci' 'cc cc cc ci ci ci' 'f f f f f f';
 }
 
@@ -28,12 +30,15 @@ header {
 
 footer {
     grid-area: f;
+
+    /* Change footer to half-width */
+    margin: auto 25%;
 }
 
 /* Mobile view */
 
 @media (max-width: 900px) {
-    .grid {
+    #grid-container {
         grid-template-columns: auto;
         grid-auto-rows: minmax(50px, auto);
         grid-template-areas: 'h' 'cn' 'ci' 'cc' 'f';
@@ -45,6 +50,10 @@ footer {
     }
 
     header img {
-        max-height: auto;
+        width: 100%;
+    }
+
+    footer {
+        margin: auto;
     }
 }

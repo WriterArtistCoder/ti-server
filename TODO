@@ -1,6 +1,7 @@
 # TODO
 - Add other comics
 - Finish mobile view and add CSS grid to other pages
+- Make api-process.js more thorough
 - Add print version of website
 - Add typography styling
 - Fix CORS header for api-server.js
