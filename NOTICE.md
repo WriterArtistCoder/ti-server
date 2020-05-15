@@ -7,3 +7,4 @@
 - [**cors**](https://github.com/expressjs/cors) by **Troy Goode**, under the [MIT License](https://opensource.org/licenses/MIT)
 - [**mime**](https://github.com/broofa/node-mime) by **Benjamin Thomas, Robert Kieffer**, under the [MIT License](https://opensource.org/licenses/MIT)
 - [**sqlite3**](https://github.com/mapbox/node-sqlite3) by **MapBox** under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause)
+- [**jsonwebtoken**](https://github.com/auth0/node-jsonwebtoken) by **Auth0, Inc.**, under the [MIT License](https://opensource.org/licenses/MIT)

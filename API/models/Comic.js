@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ComicSchema = new mongoose.Schema({
     number: {
-      type: number,
+      type: Number,
       required: true
     },
     url: {
@@ -29,18 +29,7 @@ const ComicSchema = new mongoose.Schema({
       type: String,
       default: ""
     }
-});
-
-// CREATE TABLE IF NOT EXISTS comics
-// (
-//   id INTEGER PRIMARY KEY,
-//   url TEXT UNIQUE,
-//   date TIMESTAMP,
-//   title TEXT NOT NULL,
-//   image TEXT NOT NULL UNIQUE,
-//   transcript TEXT DEFAULT "",
-//   caption TEXT DEFAULT ""
-// )
+})
 
 const Comic = mongoose.model('Comic', ComicSchema);
 

@@ -1,4 +1,6 @@
 # TODO
+- Finish AuthController
+- Reorganize project structure
 - Add other comics
 - Finish mobile view and add CSS grid to other pages
 - Make api-process.js more thorough
