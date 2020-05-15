@@ -1,7 +1,7 @@
 // Imports
 const fs = require('fs')
 const sqlite3 = require('sqlite3').verbose()
-const processor = require('./api-process')
+const processor = require('../api-process')
 
 var auth
 fs.readFile('auth.json', (err, data) => {

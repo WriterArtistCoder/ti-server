@@ -1,11 +1,11 @@
+const fs =require('fs')
+const path = require('path')
 
 module.exports = {
   async getInfo (req, res) {
     try {
-      res.status(200).send({
-        ApiName: 'WAC Application',
-        version: '1.0.0'
-      })
+      console.log(__dirname)
+      res.status(200).sendFile(__dirname + '/index.html')
     } catch (error) {
       console.log(error)
     }

@@ -7,10 +7,9 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 3. If you want to run just the API, type `npm run api`.
 
 ## Structure
-- **`docs`** The client side for the API docs and Tiny Stripz website
-    - **`api`** The content of the API docs
-        - `index.html` Homepage
-        - `style.css` Stylesheet
+- **`API`** The API
+    - Will be added soon...
+- **`docs`** The Tiny Stripz website
     - **`ti`** The content of the Tiny Stripz website
         - **`css`** Stylesheets (`.css`) for the website
             - `normalize.css` Browser compatibility stylesheet
@@ -32,7 +31,6 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 - `TODO` A todo list to quickly keep track of issues
 - `.gitignore` gitignore file
 - `api-server.js` The Tiny Stripz API server script
-- `comic_protoype.js` The Tiny Stripz API script
 - `auth.json` Authorization file, contains API requests and keys
 - `package.json` The NPM `package.json` file
 - `package-lock.json` The NPM `package-lock.json` file
