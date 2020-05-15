@@ -2,7 +2,7 @@
   "name": "ti-server",
   "version": "0.0.1",
   "description": "The code for the Tiny Stripz and Tiny Stripz API server.",
-  "main": "ti-server.js",
+  "main": "api-server.js",
   "scripts": {
     "api": "nodemon api-server.js",
     "db": "nodemon api-accessdb.js"
