@@ -1,7 +1,6 @@
 .comic-nav a {
     color: gray;
     font-size: 20px;
-
     /* Spaces buttons */
     margin-right: 15px;
 }
@@ -43,6 +42,9 @@
 /* Mobile view */
 
 @media (max-width: 900px) {
+    header p {
+        text-align: center;
+    }
     #comic-caption {
         overflow-y: scroll;
     }

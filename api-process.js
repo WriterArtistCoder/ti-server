@@ -13,13 +13,13 @@ function fromBlogger(post) {
 
     // Create an object to return
     var comic = {
-        url:        post.url,
-        date:       new Date(post.published).toISOString(),
-        number:     post.title.replace(/#(\d+): (.+)$/gm, '$1'),
-        title:      post.title.replace(/#(\d+): (.+)$/gm, '$2'),
-        image:      null,
+        url: post.url,
+        date: new Date(post.published).toISOString(),
+        number: post.title.replace(/#(\d+): (.+)$/gm, '$1'),
+        title: post.title.replace(/#(\d+): (.+)$/gm, '$2'),
+        image: null,
         transcript: null,
-        caption:    null
+        caption: null
     }
 
     try {

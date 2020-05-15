@@ -2,7 +2,7 @@
 const fs = require('fs')
 const express = require('express')
 const cors = require('cors')
-const https = require('https')
+var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 const processor = require('./api-process')
 
 // Set up auth.json
@@ -21,19 +21,29 @@ fs.readFile('docs/api/index.html', (err, data) => {
     index = data.toString()
 })
 
-// Sends an XMLHTTPRequest
-const sendXMLRequest = function (method, url) {
+/**
+ * Sends an XML request.
+ * 
+ * @param {*} method Request method (e.g. GET, POST)
+ * @param {*} url URL to request
+ * @param {*} data Data to send (optional)
+ */
+const sendXHR = function (method, url, data) {
     const promise = new Promise(function (resolve, reject) {
         const xmlRequest = new XMLHttpRequest()
         xmlRequest.open(method, url)
         xmlRequest.responseType = 'json'
 
+        if (data) {
+            xmlRequest.setRequestHeader('Content-Type', 'application/json')
+        }
+
         xmlRequest.onload = function () {
             resolve(xmlRequest.response)
         }
 
-        xmlRequest.send()
-    })
+        xmlRequest.send(JSON.stringify(data))
+    }).catch(err => { throw err; })
 
     return promise
 }
@@ -61,32 +71,21 @@ app.get('/posts', cors(), function (req, res) {
     var posts = null
 
     // GET latest post
-    https.get(auth.requests.posts, (resp) => {
-        let data = ''
-
-        // A chunk of data has been recieved.
-        resp.on('data', (chunk) => {
-            data += chunk
-        })
-
-        // The whole response has been received. Print out the result.
-        resp.on('end', () => {
-            console.log('API responded successfully! Sending data to client.')
-            const resPosts = JSON.parse(data).items // Create a list of response posts
-            posts = []
-
-            // Process each post
-            for (var i = 0; i < resPosts.length; i++) {
-                posts.push(processor.fromBlogger(resPosts[i]))
-            }
-        })
-    }).on('error', (err) => { // If there's an error
-        res.status(500).send('Error: ' + err.message)
-        console.log('Error: ' + err.message)
-        return
+    var responseData = sendXHR('GET', auth.requests.posts).then(function (responseData) {
+        console.log('BELOW:')
+        console.log(responseData)
+        console.log('API responded successfully! Sending data to client.')
+    
+        const resPosts = JSON.parse(responseData).items // Create a list of response posts
+        posts = []
+    
+        // Process each post
+        for (var i = 0; i < resPosts.length; i++) {
+            posts.push(processor.fromBlogger(resPosts[i]))
+        }
+    
+        res.status(200).send(posts) // If posts isn't empty
     })
-
-    if (posts != null) res.status(200).send(posts) // If posts isn't empty
 })
 
 // GET /posts/latest

@@ -12,12 +12,14 @@
 
 header {
     grid-area: h;
-    height: auto;
+    margin: auto;
+    width: 100%;
 }
 
 .comic-nav {
     grid-area: cn;
-    margin: auto;
+    text-align: center;
+    height: 60px;
 }
 
 .comic-image {
