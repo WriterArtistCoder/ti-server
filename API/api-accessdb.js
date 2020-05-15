@@ -43,7 +43,7 @@ const sendXHR = function (method, url, data) {
 let db = new sqlite3.Database('./comics.db', (err) => {
     if (err) console.log(err.message)
     console.log('Connected to the comics database.')
-});
+})
 
 db.run(`CREATE TABLE IF NOT EXISTS comics
 (
@@ -58,7 +58,7 @@ db.run(`CREATE TABLE IF NOT EXISTS comics
     if (err) console.log(err.message)
 })
 
-var nextPage = '';
+var nextPage = ''
 while (true) {
     sendXHR('GET', auth.requests.posts+nextPage).then(function (responseData) {
         console.log('API responded successfully! Sending data to client.')
@@ -73,14 +73,14 @@ while (true) {
         console.log('Accessed!')
         console.log(posts[0])
 
-        nextPage = '&nextPageToken='+responseData.nextPageToken;
+        nextPage = '&nextPageToken='+responseData.nextPageToken
     })
 
-    if (nextPage == null) break;
+    if (nextPage == null) break
 }
 
 db.close((err) => {
     if (err) console.error(err.message)
     
     console.log('Close the database connection.')
-});
+})

@@ -29,6 +29,8 @@
     "express": "^4.17.1",
     "jsdom": "^16.2.2",
     "mime": "^2.4.4",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.14",
     "sqlite3": "^4.2.0",
     "xmlhttprequest": "^1.8.0"
   },

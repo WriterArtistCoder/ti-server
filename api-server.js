@@ -2,7 +2,7 @@
 const fs = require('fs')
 const express = require('express')
 const cors = require('cors')
-var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
 const processor = require('./api-process')
 
 // Set up auth.json
@@ -52,7 +52,7 @@ const sendXHR = function (method, url, data) {
 var app = express()
 app.use(cors({
     origin: function (origin, callback) { // Allow all CORS requests
-        return callback(null, true);
+        return callback(null, true)
     }
 }))
 

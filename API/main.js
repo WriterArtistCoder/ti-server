@@ -1,7 +1,9 @@
 // Welcome to the ELIJAPI
-const express = require('express');
-const cors = require('cors');
+const express = require('express')
+const cors = require('cors')
 const path = require('path')
+const mongodb = require('mongodb')
+const mongoose = require('mongoose')
 
 const app = express()
 
@@ -9,8 +11,15 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors()) // Sort of a security risk, disable before building for production
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/public', express.static(__dirname + '/public'))
 
+// Connect to mongo
+const db = require('./config/keys').MongoURI
+
+mongoose
+    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err))
 
 require('./routes')(app)
 
