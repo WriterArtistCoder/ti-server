@@ -3,8 +3,7 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 
 ## Installation
 1. To run, first run `npm install` to install dependences.
-2. If you want to run the website and API (the website relies on the API), type `npm run ti`. Then open a seperate terminal and type `npm run api`.
-3. If you want to run just the API, type `npm run api`.
+2. If you want to run the API, type `npm run api`.
 
 ## Structure
 - **`API`** The API
