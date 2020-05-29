@@ -1,6 +1,6 @@
 // Imports
 const fs = require('fs')
-const sqlite3 = require('sqlite3').verbose()
+const sqlite3 = require('./node_modules/sqlite3').verbose()
 const processor = require('../api-process')
 
 var auth
