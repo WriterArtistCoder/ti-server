@@ -7,7 +7,23 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 
 ## Structure
 - **`api`** The API
-    - Will be added soon...
+    - **`controllers`** Controllers for API
+        - `style.css` Tiny Stripz API homepage stylesheet
+        - `index.html` Tiny Stripz API homepage
+        - `AuthController.js` API controller for authentication
+        - `ComicController.js` API controller for creating/getting comics
+        - `config.js` Gets JWT secrets
+        - `FileController.js` API controller for getting comics
+        - `keys.js` MongoDB API keys
+    - **`models`** MongoDB database models
+        - `Comic.js` Model for individual comics
+        - `User.js` Model for database admins
+    - **`public`** Public static resources
+        - `comics` Comics folder
+    - `api-oldserver.js` OUTDATED server script
+    - `api-process.js` Processes a JSON object from the Blogger v3 API to a Tiny Stripz comic JSON object
+    - `main.js` Server script
+    - `routes.js` Router: routes paths to a controller
 - **`docs`** The Tiny Stripz website
     - **`css`** Stylesheets (`.css`) for the website
         - `normalize.css` Browser compatibility stylesheet
@@ -27,7 +43,6 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 - `LICENSE` The LICENSE - [Mozilla Public License 2.0](https://spdx.org/licenses/MPL-2.0.html)
 - `TODO` A todo list to quickly keep track of issues
 - `.gitignore` gitignore file
-- `api-server.js` The Tiny Stripz API server script
 - `auth.json` Authorization file, contains API requests and keys
 - `package.json` The NPM `package.json` file
 - `package-lock.json` The NPM `package-lock.json` file

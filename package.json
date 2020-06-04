@@ -4,8 +4,8 @@
   "description": "The code for the Tiny Stripz and Tiny Stripz API server.",
   "main": "api-server.js",
   "scripts": {
-    "api": "nodemon ./API/main.js",
-    "db": "nodemon ./API/api-accessdb.js"
+    "api": "nodemon ./api/main.js",
+    "oldsrv": "nodemon ./api/api-oldserver.js"
   },
   "repository": {
     "type": "git",

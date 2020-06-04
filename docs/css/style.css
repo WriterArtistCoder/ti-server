@@ -1,12 +1,12 @@
 /* #ff1500, #ff9000, #ffdd00, #26cc10, #18c1f5, #0f74f7, #180ff7, #7d08e2, #b312f7, #e312f7 */
 
 @import url('normalize.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;1,400;1,500&family=Nunito:wght@600;700&display=swap');
 
 body {
 	overflow-x: hidden;
 	overscroll-behavior: none;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Rubik', 'Roboto', 'Helvetica', 'Arial', sans-serif;
 }
 
 ::selection {
