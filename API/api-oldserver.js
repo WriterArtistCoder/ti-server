@@ -17,18 +17,32 @@ function getData(path) {
         fs.readFile(path, function (err, data) {
             if (err) reject(err)
             resolve(JSON.parse(data))
-
         })
     })
 }
 
-getPost()
+var allData = []
+var pageToken = null
+do {
+    getPost(pageToken).then((data) => {
+        allData.push(data.posts)
+        pageToken = data.token
+        continue
+    })
+} while (pageToken)
 
-async function getPost() {
+/**
+ * Gets a Tiny Stripz post. If no page token is specified, picks the most recent 10.
+ * @param {String} [pageToken=null] The page token
+ * @returns A JSON object containing the comics as a JSON array of JSON objects and the next page token. e.g. `{ posts: [{ ... }, { ... }, ...], token: 'WFJWcsw23'}` `token` is null if there is no page token (which means the program is on the last page).
+ * 
+ * See the APIdocs for more on how to read the comic objects.
+ */
+async function getPost(pageToken) {
     try {
         const auth = await getData(path.join(__dirname, '/auth.json'))
 
-        axios.get(auth.requests.posts)
+        axios.get(pageToken ? (auth.requests.posts + '&pageToken=' + pageToken) : auth.requests.posts)
             .then(response => {
                 console.log('API responded successfully! Sending data to client.')
 
@@ -40,7 +54,7 @@ async function getPost() {
                     posts.push(processor.fromBlogger(resPosts[i]))
                 }
 
-                console.log(posts) // If posts isn't empty
+                return { posts, token: response.data.pageToken ? response.data.pageToken : null } // If posts isn't empty
             })
             .catch(err => {
                 console.log(err)
