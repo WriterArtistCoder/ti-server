@@ -24,6 +24,7 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
     - `api-process.js` Processes a JSON object from the Blogger v3 API to a Tiny Stripz comic JSON object
     - `main.js` Server script
     - `routes.js` Router: routes paths to a controller
+    - `auth.json` Authorization file, contains API requests and keys
 - **`docs`** The Tiny Stripz website
     - **`css`** Stylesheets (`.css`) for the website
         - `normalize.css` Browser compatibility stylesheet
@@ -43,7 +44,6 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 - `LICENSE` The LICENSE - [Mozilla Public License 2.0](https://spdx.org/licenses/MPL-2.0.html)
 - `TODO` A todo list to quickly keep track of issues
 - `.gitignore` gitignore file
-- `auth.json` Authorization file, contains API requests and keys
 - `package.json` The NPM `package.json` file
 - `package-lock.json` The NPM `package-lock.json` file
 - `NOTICE.md` NOTICE file

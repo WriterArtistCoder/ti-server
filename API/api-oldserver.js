@@ -2,52 +2,53 @@
 const fs = require('fs')
 const express = require('express')
 const cors = require('cors')
-var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
+const axios = require('axios')
 const processor = require('./api-process')
+const path = require('path')
 
-// Set up auth.json
-var auth
-fs.readFile('auth.json', (err, data) => {
-    if (err) throw err
-
-    auth = JSON.parse(data.toString())
-})
-
-// Get response page for '/' request
-var index
-fs.readFile('docs/api/index.html', (err, data) => {
-    if (err) throw err
-
-    index = data.toString()
-})
+// Functions
 
 /**
- * Sends an XML request.
- * 
- * @param {*} method Request method (e.g. GET, POST)
- * @param {*} url URL to request
- * @param {*} data Data to send (optional)
+ * Returns content of a JSON file as a JSON object.
+ * @param {String} path The filepath
  */
-const sendXHR = function (method, url, data) {
-    const promise = new Promise(function (resolve, reject) {
-        const xmlRequest = new XMLHttpRequest()
-        xmlRequest.open(method, url)
-        xmlRequest.responseType = 'json'
+function getData(path) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(path, function (err, data) {
+            if (err) reject(err)
+            resolve(JSON.parse(data))
 
-        if (data) {
-            xmlRequest.setRequestHeader('Content-Type', 'application/json')
-        }
-
-        xmlRequest.onload = function () {
-            resolve(xmlRequest.response)
-        }
-
-        xmlRequest.send(JSON.stringify(data))
-    }).catch(err => { throw err; })
-
-    return promise
+        })
+    })
 }
 
+getPost()
+
+async function getPost() {
+    try {
+        const auth = await getData(path.join(__dirname, '/auth.json'))
+
+        axios.get(auth.requests.posts)
+            .then(response => {
+                console.log('API responded successfully! Sending data to client.')
+
+                const resPosts = response.data.items // Create a list of response posts
+                posts = []
+
+                // Process each post
+                for (var i = 0; i < resPosts.length; i++) {
+                    posts.push(processor.fromBlogger(resPosts[i]))
+                }
+
+                console.log(posts) // If posts isn't empty
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    } catch (err) { console.log(err) } // Replace with returning error to client later (ERROR 500)
+}
+
+/*
 // Add middleware
 var app = express()
 app.use(cors({
@@ -75,15 +76,15 @@ app.get('/posts', cors(), function (req, res) {
         console.log('BELOW:')
         console.log(responseData)
         console.log('API responded successfully! Sending data to client.')
-    
+
         const resPosts = JSON.parse(responseData).items // Create a list of response posts
         posts = []
-    
+
         // Process each post
         for (var i = 0; i < resPosts.length; i++) {
             posts.push(processor.fromBlogger(resPosts[i]))
         }
-    
+
         res.status(200).send(posts) // If posts isn't empty
     })
 })
@@ -127,4 +128,4 @@ app.get('/posts/latest', cors(), function (req, res) {
 
 var server = app.listen(2205, function () {
     console.log('Server started on port: 2205')
-})
+})*/
