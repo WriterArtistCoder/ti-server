@@ -4,6 +4,7 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
 ## Installation
 1. To run, first run `npm install` to install dependences.
 2. If you want to run the API, type `npm run api`.
+3. To download comics from a JSON file from the Blogger v3 API stored locally, type `npm run down`. (Warning: VERY messy code. Must fix.)
 
 ## Structure
 - **`api`** The API
@@ -20,11 +21,12 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
         - `User.js` Model for database admins
     - **`public`** Public static resources
         - `comics` Comics folder
-    - `api-oldserver.js` OUTDATED server script
+    - `api-download.js` Downloads all comics to `comics.json` from a JSON file obtained from the Blogger v3 API. Extremely messy, will fix later
     - `api-process.js` Processes a JSON object from the Blogger v3 API to a Tiny Stripz comic JSON object
     - `main.js` Server script
     - `routes.js` Router: routes paths to a controller
     - `auth.json` Authorization file, contains API requests and keys
+    - `comics.json` Contains a JSON array of all comics from 1 to 234
 - **`docs`** The Tiny Stripz website
     - **`css`** Stylesheets (`.css`) for the website
         - `normalize.css` Browser compatibility stylesheet

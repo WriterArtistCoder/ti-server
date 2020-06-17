@@ -5,7 +5,7 @@
   "main": "api-server.js",
   "scripts": {
     "api": "nodemon ./api/main.js",
-    "oldsrv": "nodemon ./api/api-oldserver.js"
+    "down": "nodemon ./api/api-oldserver.js"
   },
   "repository": {
     "type": "git",
