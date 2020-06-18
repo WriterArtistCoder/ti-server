@@ -21,12 +21,13 @@ This is the code that runs on the Tiny Stripz server. It is for the [new Tiny St
         - `User.js` Model for database admins
     - **`public`** Public static resources
         - `comics` Comics folder
-    - `api-download.js` Downloads all comics to `comics.json` from a JSON file obtained from the Blogger v3 API. Extremely messy, will fix later
+    - `api-download.js` Downloads and processes all comics to `comics.json` from `posts.json`
     - `api-process.js` Processes a JSON object from the Blogger v3 API to a Tiny Stripz comic JSON object
     - `main.js` Server script
     - `routes.js` Router: routes paths to a controller
     - `auth.json` Authorization file, contains API requests and keys
     - `comics.json` Contains a JSON array of all comics from 1 to 234
+    - `posts.json` Blogger v3 API returned this JSON object to parse for `api-download.json`
 - **`docs`** The Tiny Stripz website
     - **`css`** Stylesheets (`.css`) for the website
         - `normalize.css` Browser compatibility stylesheet
