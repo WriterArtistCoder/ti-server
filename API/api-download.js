@@ -6,7 +6,7 @@ const axios = require('axios')
 const processor = require('./api-process')
 const path = require('path')
 
-var jsonFile = '<INSERT FILEPATH HERE>'
+var jsonFile = path.join(__dirname, '/posts.json')
 
 // Functions
 
@@ -26,6 +26,8 @@ function getData(path) {
 // WARNING: This code is really buggy and repeats itself over and over again...
 // But it works :)
 // Fix later
+
+// FIX FOR COMICS 51, 82, 90, 96, 103
 getPosts().then((data) => {
     fs.writeFileSync(path.join(__dirname, '/comics.json'), JSON.stringify(data))
 })
